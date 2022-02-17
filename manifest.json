@@ -1,0 +1,19 @@
+{
+	"name": "DarkInstagram",
+	"version": "1.0.0",
+	"manifest_version": 3,
+	"icons": {
+        "48": "dark48.png",
+        "128": "dark128.png"
+    },
+	"host_permissions": [
+  		"*://*.instagram.com/"
+	],
+	"description": "Use Instagram's own dark mode automatically (appends 'theme=dark' query parameter to all instagram URLs when it is not present)",
+	"content_scripts": [
+		{
+			"matches": ["*://*.instagram.com/*"],
+			"js": ["content.js"]
+		}
+	]
+}
