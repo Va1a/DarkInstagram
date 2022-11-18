@@ -4,7 +4,7 @@ if(url.toString().indexOf('/pfp') != -1){
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", url, false);
 	xmlHttp.send(null);
-	window.location.replace(new URL(xmlHttp.responseText["graphql"]["user"]["profile_pic_url_hd"]));
+	window.location.replace(new URL(JSON.parse(xmlHttp.responseText).graphql.user.profile_pic_url_hd));
 }
 else if(url.toString().indexOf('theme=dark') == -1){
 	url.searchParams.append('theme', 'dark');
